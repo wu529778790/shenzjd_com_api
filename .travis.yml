@@ -1,0 +1,16 @@
+language: node_js # 升级版本需要依赖 npm
+node_js: stable
+
+install: true # 无需安装依赖，调过安装
+
+branches:
+  only:
+  - master # 只发布 master 分支
+
+deploy:
+  provider: releases
+  api_key: ${github_token}
+  file: "FILE TO UPLOAD"
+  skip_cleanup: true
+  on:
+    tags: true
